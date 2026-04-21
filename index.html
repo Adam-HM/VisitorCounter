@@ -321,10 +321,7 @@
         <div class="live-label">
           <span class="status-dot"></span>LIVE
         </div>
-        <div class="stat-item">
-          <span class="stat-value" id="session-count">1</span>
-          <span class="stat-label">This Session</span>
-        </div>
+       
       </div>
     </div>
   </div>
@@ -334,7 +331,6 @@
 
     const counterEl   = document.getElementById('counter');
     const todayEl     = document.getElementById('today-count');
-    const sessionEl   = document.getElementById('session-count');
 
     const SESSION_KEY = 'pc_visit_counted';
     const alreadyCounted = sessionStorage.getItem(SESSION_KEY);
@@ -354,7 +350,6 @@
 
         animateCount(data.total);
         todayEl.textContent  = formatNum(data.today ?? '—');
-        sessionEl.textContent = '1';
 
       } catch (err) {
         counterEl.className = 'count-number';
